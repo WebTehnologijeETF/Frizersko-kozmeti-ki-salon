@@ -1,6 +1,6 @@
 # Frizersko-kozmeticki salon
 
-Naziv projekta: Frizersko - kozmetički salon "ST"
+Naziv projekta: Frizersko - kozmetički salon BEAUTY
 
 Web stranica frizersko-kozmetičkog salona bi trebalo da sadrži:
 - informacije o proizvodima i uslugama koje pruža salon
