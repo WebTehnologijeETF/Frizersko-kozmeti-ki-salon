@@ -1,36 +1,49 @@
-@import url(http://fonts.googleapis.com/css?family=Beta);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(http://fonts.googleapis.com/css?family=Cabin);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
 #zaglavlje {
-  padding-top: 0cm;
-  margin:0;
-clear:both;
+background:url(beuty.jpg) no-repeat;
+background-size:cover;
+background-color:rgba(255, 255, 255, 0.0);
+background-position:center;
+height:100px;
+width:250px;
+position:relative;
+margin-left:auto;
+margin-right:auto;
 }
+
 #okvir{
 width:750px;
 margin:auto;
 }
 
 body {
-  
-background: url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSTYl0fC5ZIJ2oFv8J7OLtWKyNhQPpeeSnsGLtK3YPGDdnU1deT');
-  background-repeat:repeat;
+height:100%;
+   background:url(image.jpg) repeat;
+   background-position:center;
+ background-size:cover;
   padding:0;
   margin:0;
 }
 
 h1{
-font-size: 42pt;
-font-family:Beta;
+font-size: 30pt;
+font-family:Lobster;
 margin:0;
 padding:0;
 }
 
 .meni{
 color: black;
-	height: 30px;	
+height: 20px;	
 border-bottom: 2px solid #000;
-    border-top: 2px solid #000;
+border-top: 2px solid #000;
 background-color:#fff;
-background: rgba(255, 255, 255, 0.5);
+background: rgba(255, 255, 255, 0.4);
+padding:10px;
+margin-top:20px;
+margin-bottom:20px;
 }
 
 .naviLinks a:link, a:hover, a:active, a:focus {
@@ -41,44 +54,53 @@ background: rgba(255, 255, 255, 0.5);
 
 .naviLinks {
 height: 60px;
-	width: 180px;
+	width: 140px;
 	text-align:center;
+	font-family:Oswald;
 	font-size: 14px;
 	float: left;
-	margin-top: 5px;
+
+}
+li{
+font-family:Oswald;
 }
 
 ul{
-list-style-image: url('http://www.w3schools.com/cssref/sqpurple.gif') ;
+list-style-image: url('http://www.benaltex.com/wp-content/plugins/shortcodes-ultimate/images/list-style-star.png') ;
 list-style-position: inside;
+margin:0;
+padding:0;
 }
 
 #glavni{
 float:left;
-background-color:white;
-background: rgba(255, 255, 255, 0.5);
+background:url(reklama.png) no-repeat;
+background-size:cover;
+background-color:rgba(255, 255, 255, 0.4);
 width:750px;
 height:500px;
-clear:both;
 }
 
 #linkovi{
 float:left;
 background-color:white;
-background: rgba(255, 255, 255, 0.5);
+background: rgba(255, 255, 255, 0.4);
 width:750px;
+padding:0;
 }
 
 #cjenovnik{
 float:left;
 background-color:white;
-background: rgba(255, 255, 255, 0.5);
+background: rgba(255, 255, 255, 0.4);
 width:750px;
 clear:both;
 }
 
 #desno{
 float:right;
+background:url(kontakt.jpg) no-repeat;
+height:300px;
 width:400px;
 }
 
@@ -87,36 +109,68 @@ float:left;
 background-color: white;
 width: 350px;
 height:300px;
-background: rgba(255, 255, 255, 0.5);
+background: rgba(255, 255, 255, 0.4);
 }
 
 
 
 .viselink a:link, a:hover, a:active, a:focus {
 	text-decoration: none;
-	font: Beta;
+	font-family: Cabin;
 }
 
 .viselinnk {
-	font-size: 14px;
+	font-size: 10px;
 	float: left;
 }
 .vise{
-color: white;
 background-color:#fff;
-background: rgba(255, 255, 255, 0.5);
+background: rgba(255, 255, 255, 0.4);
 padding:0;
 margin:0;
 height: 30px;	
 clear:both;
-}
-
-#podnozje {
-border-bottom: 1px solid #000;
-    border-top: 1px solid #000;
-background-color:#ddd;
-background: rgba(255, 255, 255, 0.5);
-padding:0;
-margin:0;
 clear:both;
 }
+#kursprvi{
+font-family:Oswald;
+float:left;
+background: rgba(255,255,255,0.4);
+width:550px;
+margin-bottom:5px;
+
+}
+
+#kursdrugi{
+font-family:Oswald;
+float:left;
+background: rgba(255,255,255,0.4);
+width:550px;
+
+}
+#slikajedan{
+top:0;
+background:url(vizazista.jpg) no-repeat;
+float:right;
+width:200px;
+height:120px;
+}
+#slikadva{
+top:0;
+background:url(nokti.jpg) no-repeat;
+float:right;
+width:200px;
+height:120px;
+}
+
+#slika {
+   background:url(slike.jpg) no-repeat;
+   width:750px;
+background-position:center;
+  height:500px;
+ margin:0;
+ padding:0;
+clear:both;
+ position:relative;
+}
+
