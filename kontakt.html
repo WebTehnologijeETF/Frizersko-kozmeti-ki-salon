@@ -1,42 +1,68 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML>
 <html>
 <head>
+
  <title>
  Fizersko-kozmeticki salon Beauty
  </title>
  <link rel="stylesheet" type="text/css" href="stilST.css">
  <META http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
-<body>
+<body onload="sakrij()">
 <div id="okvir">
 	<div id="zaglavlje">
-	
 	</div>
-	
 <div class="meni">
 		<div class="naviLinks"><a href="home.html">NOVOSTI</a></div>
     <div class="naviLinks"><a href="cjenovnik.html">CJENOVNIK</a></div>
     <div class="naviLinks"><a href="linkovi.html">LINKOVI</a></div>    
     <div class="naviLinks"><a href="kontakt.html">KONTAKT</a></div>
-    <div class="naviLinks"><a href="kursevi.html">KURSEVI</a></div>
+    <div class="naviLinks" id="kursevi" onmouseover="prikazi()" onmouseout="sakrij()"><a href="kursevi.html">KURSEVI</a>
+  
+  							<ul id="podmeni" onmouseover="prikazi()">
+									<li><a href="kursevi.html#kursprvi">Frizerski</a></li>
+									<li><a href="kursevi.html#kursdrugi">Kozmetički</a></li>
+									<li><a href="kursevi.html">MakeUp</a></li>
+								</ul>
+							</div>
 	</div>
 	<div id="kontakt">
-	<h1> Kontakt </h1>
-	<p>Frizersko-kozmetički salon Beuty<br />
-Pofalićka 45<br />
-71000 Sarajevo<br />
-Bosna i Hercegovina<br /><br />
-<p>Tel: +387 33 72 74 27<br />
-Fax:+387 33 72 74 27 <br />
-Mob:+387 61 21 24 77<br />
-beuty@beuty.com<br />
-</p><br />
-</div>
+	<form name="mojaForma" id="kontaktForma" onsubmit="return validacija()" method="post">
+<h1>Kontakt</h1>
+									<div class="wrapper">
+										<span class="labele">Ime i prezime*</span>
+										<input type="text" id="ime" name="ime" class="input" >
+										<span class="greske" id="eror"><img src="error.png" alt="er">  Unesite ime!</span>
+									</div>
+									<div class="wrapper">
+						       <br> <br>
+										<span class="labele">E-mail:*</span>
+										<input type="text" id="email" name="email" class="input" >	
+										<span class="greske" id="erormail"><img src="error.png" alt="er">  Neispravan E-mail!</span>						
+									</div>
+										<br> <br>
+									<div class="wrapper">
+									<br><br>
+										<span class="labele">Predmet</span>
+										<input type="text" id="predmet" name="predmet" class="input" >			
+									</div>
+										<br> <br>
+										<br><br>
+									<div class="textarea_box">
+										<span class="labele">Poruka*</span>
+										<span class="greske" id="erorporuka"><img src="error.png" alt="er">  Unesite poruku!</span>
+										<textarea name="textarea" id="poruka" cols="1" rows="1"></textarea>								
+									</div>
+			            <button>Pošalji</button>
+							    
+							</form>
 
 <div id="desno">
 
 </div>
 </div>
+</div>
+<script src="Skripta.js"></script>
 </body>
 </html>
 

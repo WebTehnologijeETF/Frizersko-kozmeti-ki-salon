@@ -61,8 +61,43 @@ height: 60px;
 	float: left;
 
 }
-li{
-font-family:Oswald;
+
+a {
+  color:black;
+  text-decoration:none;
+  outline:none;
+}
+a:hover {
+  text-decoration:underline;
+}
+
+li:hover >ul {
+display:block;
+ opacity: 1;
+}
+
+
+#podmeni {
+list-style:none;
+  display: none;
+  position: absolute;
+  width: 50px
+}
+
+#podmeni > li {
+  padding: 2px;
+  margin: 1px;
+  background-color: rgba(0,0,0,0.5);
+  width: 180px;
+}
+
+#podmeni > li > a {
+  text-decoration: none;
+    color: black;
+}
+
+#podmeni > li:hover {
+    background-color: rgba(255,0,0,0.3);
 }
 
 ul{
@@ -100,16 +135,76 @@ clear:both;
 #desno{
 float:right;
 background:url(kontakt.jpg) no-repeat;
-height:300px;
+height:400px;
 width:400px;
 }
 
 #kontakt{
 float:left;
 background-color: white;
-width: 350px;
-height:300px;
+width: 750px;
+height:440px;
 background: rgba(255, 255, 255, 0.4);
+}
+
+#kontaktForma {
+float:left;
+  margin-top:-5px;
+  width:350px;
+  height:440px;
+}
+#kontaktForma .labele {
+font-family:Oswald;
+  float:left;
+  margin-left:5px;
+  width:100px;
+  line-height:20px
+}
+#kontaktForma .wrapper {min-height:24px}
+#kontaktForma .textarea_box {
+  min-height:170px;
+  width:100%;
+  overflow:hidden;
+  padding-bottom:9px
+}
+button {
+margin-left:110px;
+padding: 8px 15px 8px;
+font-size: 18px;
+font:Oswald;
+background-color: #F36C8C;
+font-weight: bold;
+text-shadow: 1px 1px #F36C8C;
+color: #ffffff;
+border-radius: 100px;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border: 1px solid #F36C8C;
+cursor: pointer;
+box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+#kontaktForma a {margin:10px;}
+#kontaktForma .input {
+  width:85%;
+  height:18px;
+  background:#faf3ed;
+  padding:1px 5px;
+  color:#220000;
+  font:14px Oswakd;
+  margin:0;float:left}
+  
+#kontaktForma textarea {
+  overflow:auto;
+  width:85%;
+  height:163px;
+  background:#faf3ed;
+  padding:1px 5px;
+  color:#220000;
+  font:14px Oswald;
+  margin:0
 }
 
 
@@ -172,5 +267,13 @@ background-position:center;
  padding:0;
 clear:both;
  position:relative;
+}
+
+#kontaktForma .greske {
+font-family:Oswald;
+  background:rgba(255,0,0,0.3);
+  height:8px;
+  margin-left:-10px;
+  display:none;
 }
 
