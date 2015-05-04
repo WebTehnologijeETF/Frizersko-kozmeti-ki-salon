@@ -109,12 +109,12 @@ padding:0;
 
 #glavni{
 float:left;
-background:url(reklama.png) no-repeat;
-background-size:cover;
+
 background-color:rgba(255, 255, 255, 0.4);
 width:750px;
 height:500px;
 }
+
 
 #linkovi{
 float:left;
@@ -132,8 +132,9 @@ width:750px;
 clear:both;
 }
 
-#desno{
+#podstranice .desno{
 float:right;
+margin-top:-430px;
 background:url(kontakt.jpg) no-repeat;
 height:400px;
 width:400px;
@@ -151,7 +152,7 @@ background: rgba(255, 255, 255, 0.4);
 float:left;
   margin-top:-5px;
   width:350px;
-  height:440px;
+  height:500px;
 }
 #kontaktForma .labele {
 font-family:Oswald;
@@ -208,25 +209,6 @@ box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 }
 
 
-
-.viselink a:link, a:hover, a:active, a:focus {
-	text-decoration: none;
-	font-family: Cabin;
-}
-
-.viselinnk {
-	font-size: 10px;
-	float: left;
-}
-.vise{
-background-color:#fff;
-background: rgba(255, 255, 255, 0.4);
-padding:0;
-margin:0;
-height: 30px;	
-clear:both;
-clear:both;
-}
 #kursprvi{
 font-family:Oswald;
 float:left;
@@ -271,9 +253,10 @@ clear:both;
 
 #kontaktForma .greske {
 font-family:Oswald;
+font-size:12px;
   background:rgba(255,0,0,0.3);
-  height:8px;
-  margin-left:-10px;
+  height:20px;
+float:right;
   display:none;
 }
 
