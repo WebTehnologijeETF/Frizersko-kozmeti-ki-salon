@@ -1,6 +1,7 @@
 ﻿<div id="podstranice">
 	<div id="kontakt">
-	<form name="mojaForma" id="kontaktForma" onSubmit="return validacija()" method="post">
+	
+	<form name="mojaForma" id="kontaktForma" method="POST" action= "kontakt.php"> 
 <h1>Kontakt</h1>
 									<div class="wrapper">
 										<span class="labele">Ime i prezime*</span>
@@ -43,6 +44,23 @@
 			            <button>Pošalji</button>
 							    
 							</form>
+<?php
+if (isset($_POST['ime'])) {
+$name = test_input($_POST["ime"]);
+if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+  document.getElementById("ime").style.display = "inline";
+ document.getElementById("ime").style.visibility="visible";
+}
+ 
+}
+if (empty($_POST['poruka'])) {
+document.getElementById("ime").style.display = "poruka";
+ document.getElementById("ime").style.visibility="poruka";
+}
+
+
+}
+ ?>
 
 </div>
 <div class="desno">

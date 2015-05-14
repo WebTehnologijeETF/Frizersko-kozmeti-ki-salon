@@ -11,20 +11,48 @@ function sakrij(){
 	document.getElementById("eroropstina").style.display="none";
 	document.getElementById("erormjesto").style.display="none";
 }
+
+//funkcija za provjeru Blank Space
+function provjeriSpace(id) {
+var flag=0;
+       var strText=id.value;
+       var strArr = new Array();
+  
+       strArr = strText.split("");
+
+       if(strArr[0]==" ")
+       flag=1;
+       
+       if (flag==1) return true;
+       else return false; 
+
+}
+
 function validacija() {
-var mailRegEx = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 
 var ret=true;
+
+//validacija imena
 if(ime.value=="") {
 document.getElementById("eror").style.display="inline";
 document.getElementById("eror").style.visibility="visible";
 ret=false;
 }
-else
+else if(ime.value!="")
 {
+       
+       if (provjeriSpace(ime))
+        {
+       document.getElementById("eror").style.display="inline";
+document.getElementById("eror").style.visibility="visible";
+ret=false;
+       }
+       else if (!provjeriSpace(ime))
 document.getElementById("eror").style.display="none";
 }
 
+
+//validacija opstine
 if(opstina.value=="") {
 document.getElementById("eroropstina").style.display="inline";
 document.getElementById("eroropstina").style.visibility="visible";
@@ -35,6 +63,8 @@ else
 document.getElementById("eroropstina").style.display="none";
 }
 
+
+//validacija mjesta
 if(mjesto.value=="") {
 document.getElementById("erormjesto").style.display="inline";
 document.getElementById("erormjesto").style.visibility="visible";
@@ -45,34 +75,47 @@ else
 document.getElementById("erormjesto").style.display="none";
 }
 
+ajaxValidacija();
+
+//validacija poruke
 if(poruka.value=="") {
 document.getElementById("erorporuka").style.display="inline";
 document.getElementById("erorporuka").style.visibility="visible";
 ret=false;
 }
+else if(poruka.value!="")
+{
+  
+       if (provjeriSpace(poruka)) {
+       document.getElementById("erorporuka").style.display="inline";
+document.getElementById("erorporuka").style.visibility="visible";
+ret=false;
+       }
 else
 {
 document.getElementById("erorporuka").style.display="none";
 }
+}
 
- var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-
-
-if (re.test(email) == false || email.value=="") {
+//validacija maila
+ var re = /(\w+)@((\w+).){2}.(\w+){2}/i;
+if (!re.test(email) || email.value=="") {
         document.getElementById("erormail").style.display="inline";
+        document.getElementById("erormail").style.visibility="visible";
         ret = false;
+    } 
+    else if (re.test(email)) {
+    document.getElementById("erormail").style.display="none";
     }
     
-	
+
 return ret;
-
-
 }
 
 
 
 
-
+//ajax ucitavanje stranica
 function ucitaj(id) {
    var xhr = new XMLHttpRequest();
 	xhr.onload = function () {
@@ -85,9 +128,8 @@ function ucitaj(id) {
 }
 
 
-
+//ajax validacija
 var usjpesno=false;
-
 function ajaxValidacija() {
     var o = document.getElementById("opstina");
 var m = document.getElementById("mjesto");

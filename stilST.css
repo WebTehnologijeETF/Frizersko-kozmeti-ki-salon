@@ -108,12 +108,10 @@ padding:0;
 }
 
 #glavni{
-float:left;
-
 background-color:rgba(255, 255, 255, 0.4);
 width:750px;
-height:500px;
 }
+
 
 
 #linkovi{
@@ -144,7 +142,7 @@ width:400px;
 float:left;
 background-color: white;
 width: 750px;
-height:440px;
+height:550px;
 background: rgba(255, 255, 255, 0.4);
 }
 
@@ -257,6 +255,6 @@ font-size:12px;
   background:rgba(255,0,0,0.3);
   height:20px;
 float:right;
-  display:none;
+ display:none;
 }
 
