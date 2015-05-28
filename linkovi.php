@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
  <title>
@@ -37,7 +37,6 @@
 <?php
 session_start();
 $veza = new PDO("mysql:dbname=beauty;host=localhost;charset=utf8", "user", "user");
- 
      $veza->exec("set names utf8");
      $rezultat = $veza->query("select id, naslov, tekst, slika, vise, UNIX_TIMESTAMP(datum) datum2, autor from novosti order by datum desc");
      if (!$rezultat) {
@@ -91,61 +90,24 @@ if ($username=="admin") {
 	
 	  	
 		?>
-		
-		<div id="kontakt">
-	
-	<form name="mojaForma" id="kontaktForma" method="POST" action= "kontakt.php"> 
-<h1>Kontakt</h1>
-									<div class="wrapper">
-										<span class="labele">Ime i prezime*</span>
-										<input type="text" id="ime" name="ime" class="input" />
-										<span class="greske" id="eror"><img src="error.png" alt="er"/>  Unesite ime!</span>
-									</div>
-									<div class="wrapper">
-	
-		
-										<span class="labele">Opština*</span>
-										<input type="text" id="opstina" name="opstina" class="input" onKeyUp="ajaxValidacija();" onBlur="ajaxValidacija();" />
-										<span class="greske" id="eroropstina"><img src="error.png" alt="er"/>  Mjesto i opština se ne slažu!</span>
-									</div>
-									<div class="wrapper">
-								
-							
-										<span class="labele">Mjesto*</span>
-										<input type="text" id="mjesto" name="mjesto" class="input" onKeyUp="ajaxValidacija();" onBlur="ajaxValidacija();" />
-										<span class="greske" id="erormjesto"><img src="error.png" alt="er"/>  Mjesto i opština se ne slažu!</span>
-									</div>
-									<div class="wrapper">
-						     
-										<span class="labele">E-mail:*</span>
-										<input type="text" id="email" name="email" class="input" />	
-										<span class="greske" id="erormail"><img src="error.png" alt="er"/>  Neispravan E-mail!</span>						
-									</div>
-									
-									<div class="wrapper">
-							
-										<span class="labele">Predmet</span>
-										<input type="text" id="predmet" name="predmet" class="input" />			
-									</div>
-										<br> </br>
-										<br></br>
-									<div class="textarea_box">
-										<span class="labele">Poruka*</span>
-										<span class="greske" id="erorporuka"><img src="error.png" alt="er"/>  Unesite poruku!</span>
-										<textarea name="textarea" id="poruka" cols="1" rows="1"></textarea>								
-									</div>
-			            <button>Pošalji</button>
-							    
-							</form>
+		<div id="linkovi">
+<h1>Partneri</h1>
+<ul>
+  <li><a href="http://www.lorealparisusa.com/en/products/makeup.aspx">L'oreal</a></li>
+    <li><a href="http://www.maccosmetics.com/index.tmpl">MAC</a></li>
+    <li><a href="http://www.moroccanoil.com/usa/h_us_en/products">MoroccanOil</a></li>    
+    <li><a href="http://www.urbandecay.com/">Urban Decay</a></li>
+    <li><a href="http://www.frizerland.ba/">Frizerland</a></li>
+	</ul>
+</div>	
 
+<div id="slika">
 
 </div>
-<div class="desno">
 
-
-</div>
-		
-			</div>
+	</div>
+	
+	</div>
 </div>
 
 </div>
@@ -155,8 +117,4 @@ if ($username=="admin") {
 
 
 	
-
-
-
-
 

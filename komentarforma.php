@@ -8,15 +8,10 @@
  <META http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
-	
-	
 <div id="okvir">
 	<div id="zaglavlje">
 	
-	
 	</div>
-	
-	
 <div class="meni">
 		<div class="naviLinks"><a href="home.php">NOVOSTI</a></div>
     <div class="naviLinks"><a href="cjenovnik.html">CJENOVNIK</a></div>
@@ -36,17 +31,11 @@
 
 <?php
 session_start();
-$veza = new PDO("mysql:dbname=beauty;host=localhost;charset=utf8", "user", "user");
+   $veza = new PDO("mysql:dbname=beauty;host=localhost;charset=utf8", "user", "user");
  
-     $veza->exec("set names utf8");
-     $rezultat = $veza->query("select id, naslov, tekst, slika, vise, UNIX_TIMESTAMP(datum) datum2, autor from novosti order by datum desc");
-     if (!$rezultat) {
-          $greska = $veza->errorInfo();
-          print "SQL greška: " . $greska[2];
-          exit();
-     }
+ $veza->exec("set names utf8");
 	 
-	 if (isset($_SESSION['username']) || isset($_REQUEST['submit'])) {
+	  if (isset($_SESSION['username']) || isset($_REQUEST['submit'])) {
 		 if (isset($_SESSION['username']))
      $username = $_SESSION['username'];
  else {
@@ -87,57 +76,70 @@ if ($username=="admin") {
 	</div>");
    
 	 }
-	 	
-	 
-	  if( isset($_GET ['vise'])) {
-		  $rezultat = $veza->query("select id, naslov, tekst, slika, vise, UNIX_TIMESTAMP(datum) datum2, autor from novosti order by datum desc");
-          foreach ($rezultat as $novost) {
-	      if ($novost['vise']!=null) {
-	       print ("<div id = 'glavni'>
-			 <img src ='".htmlentities($novost['slika'], ENT_QUOTES)."' height:'200' width:'750' />
-			 <h3>".htmlentities($novost['naslov'], ENT_QUOTES)."</h3>
-			 <p> ".$novost['tekst']."<a style='color: blue;'></a></p>
-			 <p> ".$novost['vise']."<a style='color: blue;'></a></p>
-			 <p style='color: pink;'>".$novost['datum2']." | by ".htmlentities($novost['autor'], ENT_QUOTES)."</p></div> ");
-		}
-			  print("<div id='komentari'>
-		     <img src ='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSVxMmlJLFDMhOEBxxpf2lzR9_AuOViDd64nklcUtEqCbwFP3Ys' height:'20' width:'20' /> 
-			 <a href='http://localhost/projekat/komentarforma.php?coment=".$novost['id']."'> Komentariši novost</a>
-			 </div>");
-			 $_SESSION['id'] = $novost['id'];
-		 }
-	 }
-	  
 	
-	  
-
-     foreach ($rezultat as $novost) {
-		
+	 if (isset($_REQUEST['coment'])) {
+		 $_SESSION['id']=$_REQUEST['coment'];
+		  $rezultat = $veza->query("select id, autor, tekst, UNIX_TIMESTAMP(datum) datum2, email from komentari order by datum desc");
+	 foreach ($rezultat as $komentar) {
 		 print ("<div id = 'glavni'>
-			 <img src ='".htmlentities($novost['slika'], ENT_QUOTES)."' height:'200' width:'750' />
-			 <h3>".htmlentities($novost['naslov'], ENT_QUOTES)."</h3>
-			 <p> ".$novost['tekst']."<a style='color: blue;'></a></p>
-			 <p style='color: pink;'>".$novost['datum2']." | by ".htmlentities($novost['autor'], ENT_QUOTES)."</p></div> ");
-		  if ($novost['vise']!=null) {
-			 print ("<p style='color: red;'>
-			 <a class='linkzavise' href=home.php?vise=".$novost['vise'].">Vise</a>
-			 </p><br/>");
-			 
-		  }
-		  print("<div id='komentari'>
-		     <img src ='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTLNEg9s7D1_6LEb_vewrzDNCcJYKIzXGf9MtnQHfyDOUDRsNIs' height:'26' width:'26' /> 
-			 
-			 <a href='http://localhost/projekat/komentarforma.php?coment=".$novost['id']."'> Komentariši novost</a>
-			 </div>");
-			 $_SESSION['id'] = $novost['id'];
-		 } 	
-		?>
+		 <h3>".$komentar['id']."</h3>
+			 <p> ".$komentar['tekst']."<a style='color: blue;'></a></p>
+			 <p style='color: pink;'>".$komentar['datum2']." | by ".htmlentities($komentar['autor'], ENT_QUOTES)."</p>
+			 <p>".htmlentities($komentar['email'], ENT_QUOTES)."</p></div>");
+	 } 
+	 }
+		 
+	
+ if (isset ( $_REQUEST['comment'])) {
+			$novicoment=$_REQUEST['comment'];
+			$noviautor=$_GET['autora'];
+			$noviemail=$_GET['emaila'];
+			$novid=$_SESSION['id'];
+			$noviKomentar= $veza->query("INSERT INTO komentari SET id='',novost='".$novid."', tekst='".$novicoment."', autor='".$noviautor."', email='".$noviemail."' ");
+		    if (!$noviKomentar) {
+          $greska = $veza->errorInfo();
+          print "SQL greška: " . $greska[2];
+          exit();
+     }
+		 }
+		
+		
+	
+    ?>
+
+	
+
+
+
+
+   
+<form id="komentarforma" action="komentarforma.php" method="get">
+
+      <p> <h1>Ostavite komentar: </h1> <br />
+	  <div class="wrapper">
+	  <label class="labele">Komentar:</label>
+	  <input type="text" name="comment">
+	  </div>
+	  <div class="wrapper">
+	  <label class="labele">Autor</label>
+	  <input type="text" name="autora"> 
+	  </div>
+	  <div class="wrapper">
+	  <label class="labele">Email</label>
+	   <input type="text"  name="emaila"> 
+	  </div>
+  <div class="wrapper">
+      <input class="dugme" type="submit" value="Komentariši">
+	    <div class="wrapper">
+	  </p>
+    </form>	
+
+	
 </div>
-
-
+  </body>
+</html>
 
 </div>
 <script src="Skripta.js"></script>
 </body>
 </html>
-

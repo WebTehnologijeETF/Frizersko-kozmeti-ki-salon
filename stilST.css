@@ -1,6 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 @import url(http://fonts.googleapis.com/css?family=Cabin);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
+
+
 #zaglavlje {
 background:url(beuty.jpg) no-repeat;
 background-size:cover;
@@ -12,6 +14,7 @@ position:relative;
 margin-left:auto;
 margin-right:auto;
 }
+
 
 #okvir{
 width:750px;
@@ -72,7 +75,7 @@ a:hover {
 }
 
 li:hover >ul {
-display:block;
+
  opacity: 1;
 }
 
@@ -166,6 +169,45 @@ font-family:Oswald;
   overflow:hidden;
   padding-bottom:9px
 }
+#komentarforma {
+width:100%;
+float:left;
+  margin-top:-5px;
+  height:500px;
+}
+#komentarforma .labele {
+font-family:Oswald;
+  float:left;
+  margin-left:5px;
+  width:100px;
+  line-height:20px
+}
+#komentarforma .wrapper {min-height:24px}
+#komentarforma .textarea_box {
+  min-height:170px;
+  width:100%;
+  overflow:hidden;
+  padding-bottom:9px
+}
+.dugme {
+margin-left:100px;
+padding: 8px 5px 8px;
+font-size: 18px;
+font:Oswald;
+background-color: #F36C8C;
+font-weight: bold;
+text-shadow: 1px 1px #F36C8C;
+color: #ffffff;
+border-radius: 100px;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border: 1px solid #F36C8C;
+cursor: pointer;
+box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
 button {
 margin-left:110px;
 padding: 8px 15px 8px;
@@ -238,6 +280,8 @@ width:200px;
 height:120px;
 }
 
+
+
 #slika {
    background:url(slike.jpg) no-repeat;
    width:750px;
@@ -257,4 +301,88 @@ font-size:12px;
 float:right;
  display:none;
 }
+ 
+ .linkzavise {
+ margin-top:-15px;
+ font-family:Oswald;
+ font-size:15px;
+ color:red;
+ padding:0;
+ clear:both;
+ }
+ .prijava {
+ font-family: Oswald;
+ font-size:15px;
+ font-wight:bold;
+  float:right;
+  margin-top:-180px;
+  margin-left:850px;
+	position:absolute;
+     
+ }
+ 
+ .loginforma {
+ margin-right:15px;
+   top: 15px;
+    right:15px;
+	position:absolute;
+       width:150px;
+       z-index: 2;
+      
+}
+.labelelogin {
+background:rgba(255,0,0,0.3);
+font-family:Oswald;
+font-size:15px;
+font-weight: bold;
+ float:left;
+ margin-left:0px;
+ width:150px;
+ line-height:20px
+}
+.submiti {
+margin-top:15px;
+padding: 8px 5px 8px;
+font-size: 13px;
+font:Oswald;
+background-color: #F36C8C;
+font-weight: bold;
+text-shadow: 1px 1px #F36C8C;
+color: #ffffff;
+border-radius: 100px;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border: 1px solid #F36C8C;
+cursor: pointer;
+box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+#name {
+width:150px;;
+}
+#password {
+width:150px;;
+}
 
+#podmenii {
+
+  position: absolute;
+  width: 50px
+}
+
+#podmenii > li {
+  padding: 2px;
+  margin: 1px;
+  background-color: rgba(0,0,0,0.5);
+  width: 180px;
+}
+
+#podmenii > li > a {
+  text-decoration: none;
+    color: black;
+}
+
+#podmenii > li:hover {
+    background-color: rgba(255,0,0,0.3);
+}

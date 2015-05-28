@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
  <title>
@@ -37,8 +37,7 @@
 <?php
 session_start();
 $veza = new PDO("mysql:dbname=beauty;host=localhost;charset=utf8", "user", "user");
- 
-     $veza->exec("set names utf8");
+      $veza->exec("set names utf8");
      $rezultat = $veza->query("select id, naslov, tekst, slika, vise, UNIX_TIMESTAMP(datum) datum2, autor from novosti order by datum desc");
      if (!$rezultat) {
           $greska = $veza->errorInfo();
@@ -92,60 +91,26 @@ if ($username=="admin") {
 	  	
 		?>
 		
-		<div id="kontakt">
-	
-	<form name="mojaForma" id="kontaktForma" method="POST" action= "kontakt.php"> 
-<h1>Kontakt</h1>
-									<div class="wrapper">
-										<span class="labele">Ime i prezime*</span>
-										<input type="text" id="ime" name="ime" class="input" />
-										<span class="greske" id="eror"><img src="error.png" alt="er"/>  Unesite ime!</span>
-									</div>
-									<div class="wrapper">
-	
-		
-										<span class="labele">Opština*</span>
-										<input type="text" id="opstina" name="opstina" class="input" onKeyUp="ajaxValidacija();" onBlur="ajaxValidacija();" />
-										<span class="greske" id="eroropstina"><img src="error.png" alt="er"/>  Mjesto i opština se ne slažu!</span>
-									</div>
-									<div class="wrapper">
-								
-							
-										<span class="labele">Mjesto*</span>
-										<input type="text" id="mjesto" name="mjesto" class="input" onKeyUp="ajaxValidacija();" onBlur="ajaxValidacija();" />
-										<span class="greske" id="erormjesto"><img src="error.png" alt="er"/>  Mjesto i opština se ne slažu!</span>
-									</div>
-									<div class="wrapper">
-						     
-										<span class="labele">E-mail:*</span>
-										<input type="text" id="email" name="email" class="input" />	
-										<span class="greske" id="erormail"><img src="error.png" alt="er"/>  Neispravan E-mail!</span>						
-									</div>
-									
-									<div class="wrapper">
-							
-										<span class="labele">Predmet</span>
-										<input type="text" id="predmet" name="predmet" class="input" />			
-									</div>
-										<br> </br>
-										<br></br>
-									<div class="textarea_box">
-										<span class="labele">Poruka*</span>
-										<span class="greske" id="erorporuka"><img src="error.png" alt="er"/>  Unesite poruku!</span>
-										<textarea name="textarea" id="poruka" cols="1" rows="1"></textarea>								
-									</div>
-			            <button>Pošalji</button>
-							    
-							</form>
-
-
-</div>
-<div class="desno">
-
-
-</div>
-		
-			</div>
+		<div id="kursprvi">
+	- GRUPNA OBUKA ZA PROFESIONALNOG VIZAŽISTU - 
+	<br></br>
+	Priključite se školi šminkanja i naučite sve što je potrebno za profesionalnog vizažistu.
+	Nakon uspješno završene obuke stičete certifikat.
+	Obuka se održava u našim salonima. Prijave za obuku traju do 30.4.2015.
+	Za prijavu, kontaktirajte na tel: 033/72 74 27.
+	</div>
+	<div id ="slikajedan">
+	</div>
+	<div id="kursdrugi">
+	- KURS ZA NADOGRADNJU NOKTIJU - 
+    <br></br>
+    Na kursu za nadogradnju noktiju možete naučiti sljedeće stvari: standardnu nadogradnju noktiju, izlivanje noktiju,
+    trajni frenč, gel lak tahinku, te korekciju za sve tehnike. Prijave traju do 12. 5. 2015.
+    Za dodatne informacije konktaktirajte nas na tel: 033/72 74 27.
+	</div>
+	<div id="slikadva">
+	</div>
+	</div>
 </div>
 
 </div>
@@ -155,8 +120,5 @@ if ($username=="admin") {
 
 
 	
-
-
-
 
 

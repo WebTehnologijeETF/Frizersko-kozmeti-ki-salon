@@ -1,16 +1,29 @@
 function prikazi(){
    document.getElementById("podmeni").style.display="block";
    document.getElementById("podmeni").style.clear="both";
+ 
 }
+function prikazinovi(){
+  
+   document.getElementById("podmenii").style.visibility="visible";
+   document.getElementById("podmenii").style.clear="both";
+}
+ 
  
 function sakrij(){
 	document.getElementById("podmeni").style.display="none";
+	document.getElementById("podmenii").style.display="none";
 	document.getElementById("eror").style.display="none";
 	document.getElementById("erormail").style.display="none";
 	document.getElementById("erorporuka").style.display="none";
 	document.getElementById("eroropstina").style.display="none";
 	document.getElementById("erormjesto").style.display="none";
 }
+function sakrijnovi(){
+	document.getElementById("podmenii").style.display="none";
+	
+}
+
 
 //funkcija za provjeru Blank Space
 function provjeriSpace(id) {
