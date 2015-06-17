@@ -8,34 +8,53 @@
  <META http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
+<?php
+$veza = new PDO("mysql:dbname=beauty;host=localhost;charset=utf8", "user", "user");
+ 
+     $veza->exec("set names utf8");
+	 
+
+	  if (isset($_REQUEST['action'])) {
+		 session_unset();
+		 session_destroy(); 
+		 header("location: home.php");
+         }
+	 
 	
+		
+	 print("<div class='loginforma' > <form class='loginform action='logovan.php'>
+	  <input class='logout' id='out' name='action' type='submit' value='Logout'></form>
+	</form>
+	</div>");
 	
+	 
+?>
+<div id="vrh">
+	</div>
 <div id="okvir">
+
 	<div id="zaglavlje">
-	
 	
 	</div>
 	
 	
+	
+	
+<div class="gornji"></div>	
 <div class="meni">
-		<div class="naviLinks" onmouseover="prikazi()" onmouseout="sakrij()"><a href="dodajNovost.php">NOVOSTI</a>
-		<ul id="podmeni" onmouseover="prikazi()">
-									<li><a href="dodajNovost.php">Dodavanje</a></li>
-									<li><a href="promijeniNovost.php">Promjena</a></li>
-									<li><a href="brisanjeNovosti.php">Brisanje</a></li>
-								</ul>
-								</div>
-    <div class="naviLinks"><a href="brisanjeKomentara.php">BRISANJE KOMENTARA</a></div>
-	<div class="naviLinks"><a href="dodavanjeKorisnika.php">DODAVANJE KORISNIKA</a></div>
-	<div class="naviLinks"><a href="brisanjeKorisnika.php">BRISANJE KORISNIKA</a></div>
-	<div class="naviLinks"><a href="promjenaKorisnika.php">PROMJENA KORISNIKA</a></div>
-	
+		<div class="naviLinks"><a href="home.php">NOVOSTI</a></div>
+    <div class="naviLinks"><a href="cjenovnik.php">CJENOVNIK</a></div>
+    <div class="naviLinks"><a href="linkovi.php">LINKOVI</a></div>    
+    <div class="naviLinks"><a href="kontakt.php">KONTAKT</a></div>
+	<div class="naviLinks"><a href="kursevi.php">KURSEVI</a></div>
+	</div>
+<div class="dojnji"></div>
 
-	
-								</div>
-								
 
-<div id="glavni">
+
+
+
+<div id="omot" style="padding-bottom:10px; height:600px;">
 
 <?php
 $veza = new PDO("mysql:dbname=beauty;host=localhost;charset=utf8", "user", "user");
@@ -63,33 +82,38 @@ $veza = new PDO("mysql:dbname=beauty;host=localhost;charset=utf8", "user", "user
 
 
 		?>
-</div>
 <form id="komentarforma" action="dodajNovost.php" method="get">
 
-      <p> <h1>Dodavanje novosti: </h1> <br />
-	  <div class="wrapper">
-	  <label class="labele">Naslov:</label>
-	  <input type="text" name="naslov">
-	  </div>
-	  <div class="wrapper">
-	  <label class="labele">Autor</label>
-	  <input type="text" name="autora"> 
-	  </div>
-	  <div class="wrapper">
-	  <label class="labele" id="tekstlabela">Tekst</label>
-	   <input type="text"  name="tekst"> 
-	  </div>
-	   <div class="wrapper">
-	  <label class="labele">Vise</label>
-	   <input type="text"  name="vise"> 
-	  </div>
-	  <div class="wrapper">
-	  <label class="labele">URL slike</label>
-	   <input type="url" name="slika">
-	  </div>
+      <p> <center><h1>Dodavanje novosti: </h1> <br /></center>
+	 
+	  <input type="text" name="naslov" placeholder="Naslov...">
+	<br/>
+<br/>	
+	<input type="text" name="autora" placeholder='Autor...'> 
+	 <br/>
+	 <br/>
+	 <textarea name='tekst' id='tekst' placeholder='Unesite tekst...' cols='30' rows='8'></textarea>
+	   <br/>
+	  <br/>
+	  <textarea name='vise' id='vise' placeholder='Vise...' cols='30' rows='8'></textarea>
+	  <br/>
+	  <br/>
+	   <input type="url" name="slika" placeholder="URL slike...">
+	  <br/>
+	  <br/>
       <input class="dugme" type="submit" name="dodaj" value="Dodaj">
+	 
 	  </p>
+	
     </form>	
+	<div id="natrag" style="padding-top:330px;"><a href="logovan.php">Natrag na admin panel</a></div>
+</div>
+</div>
+<div id="dno">
+
+</div>
+<div id="copyright">
+<center>Selma Tucak, 16043</center>
 </div>
 <script src="Skripta.js"></script>
 </body>

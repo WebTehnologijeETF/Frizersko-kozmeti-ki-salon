@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
  <title>
@@ -6,10 +6,9 @@
  </title>
  <link rel="stylesheet" type="text/css" href="stilST.css">
  <META http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 </head>
 <body>
-<?php
+	<?php
 session_start();
 $veza = new PDO("mysql:dbname=beauty;host=localhost;charset=utf8", "user", "user");
  
@@ -53,7 +52,7 @@ if ($username=="admin") {
 	</div>");
 	 }
 	 
-?>	
+?>
 	<div id="vrh">
 	</div>
 <div id="okvir">
@@ -73,82 +72,145 @@ if ($username=="admin") {
 	</div>
 <div class="dojnji"></div>
 
-
 		<div id="omot">
-		<div id="kontakt">
-		<center><h2>Kontaktirajte nas</h2></center><br>
-		<div id="adresa">
-		<div id="tekstic">
-		Adresa<br/><br/>
-		
-		Ruđera Boškovića 394<br/>
-		71000 Sarajevo<br/>
-		BiH
-		<br/><br/>
-		Telefon:+38733654652<br/>
-		Mobitel:+38761568563<br/>
-		E-mail: selma@beauty.com<br/>
-		Skype: beauty<br/>
-		</div>
-		<br><br>
-		<div id="map" ></div>
-		</div>
-	
-	<form name="mojaForma" id="kontaktForma" method="POST" action= "kontakt.php"> 
-									<div class="wrapper">
-										<span class="labele">Ime i prezime*</span>
-										<input type="text" id="ime" name="ime" class="input" />
-										<span class="greske" id="eror"><img src="error.png" alt="er"/>  Unesite ime!</span>
-									</div>
-							
-	
-									<div class="wrapper">
-						     
-										<span class="labele">E-mail:*</span>
-										<input type="text" id="email" name="email" class="input" />	
-										<span class="greske" id="erormail"><img src="error.png" alt="er"/>  Neispravan E-mail!</span>						
-									</div>
-									
-									<div class="wrapper">
-							
-										<span class="labele">Predmet</span>
-										<input type="text" id="predmet" name="predmet" class="input" />			
-									</div>
-										<br> <br>
-								
-									<div class="textarea_box">
-										<span class="labele">Poruka*</span>
-										<span class="greske" id="erorporuka"><img src="error.png" alt="er"/>  Unesite poruku!</span>
-										<textarea name="textarea" id="poruka" cols="1" rows="1"></textarea>								
-									</div>
-			            <button onclick="validacija();">Pošalji</button>
-							    
-							</form>
-
-
+		<div id="cjenovnik">
+<table style="margin-left:30px; margin-bottom:20px; margin-top:20px;" border="0px" width="100%">
+<tr>
+ <th align="left">Frizerske usluge</th>
+ <th align="left">Cijena (KM)</th>
+ </tr>
+ <tr></tr>
+  <tr></tr>
+   <tr></tr>
+ <tr>
+<td>Pranje kose</td>
+<td>5KM</td>
+</tr>
+<tr>
+<td>Muško šišanje</td>
+<td>7KM</td>
+</tr>
+<tr>
+<td>Žensko šišanje</td>
+<td>10KM</td>
+</tr>
+<tr>
+<td>Feniranje kratka kosa</td>
+<td>10KM</td>
+</tr>
+<tr>
+<td>Feniranje duga kosa</td>
+<td>20KM</td>
+</tr>
+<tr>
+<td>Šišanje + feniranje kratka kosa</td>
+<td>20KM</td>
+</tr>
+<tr>
+<td>Šišanje + feniranje duga kosa</td>
+<td>30KM</td>
+</tr>
+<tr>
+<td>Farbanje</td>
+<td>45KM</td>
+</tr>
+<tr>
+<td>Pramenovi</td>
+<td>50KM</td>
+</tr>
+<tr>
+<td>Minnival</td>
+<td>37KM</td>
+</tr>
+<tr>
+<td>Brazilsko feniranje*</td>
+<td>100KM</td>
+</tr>
+<tr>
+<td>Svečana frizura</td>
+<td>45KM</td>
+</tr>
+<tr>
+<td>Tretman Makadamia</td>
+<td>25KM</td>
+</tr>
+<tr>
+<td>Nadogradnja kose (po pramenu)*</td>
+<td>6KM</td>
+</tr>
+<tr>
+<td>Skidanje nadogradnje (po pramenu)*</td>
+<td>1KM</td>
+</tr>
+<tr>
+ <tr></tr>
+  <tr></tr>
+   <tr></tr>
+ <th align="left">Kozmetičke usluge</th>
+ <th align="left">Cijena (KM)</th>
+ </tr>
+  <tr></tr> <tr></tr> <tr></tr>
+<tr>
+<td>Šminkanje</td>
+<td>25KM</td>
+</tr>
+<tr>
+<td>Higijenski tretman lica</td>
+<td>40KM</td>
+</tr>
+<tr>
+<td>Piling masaža i maska</td>
+<td>30 KM</td>
+</tr>
+<tr>
+<td>Fotopodmlađivanje sa IPL-om*</td>
+<td>80KM</td>
+</tr>
+<tr>
+<td>Depigmentacija cijelo lica sa IPL-om</td>
+<td>70KM</td>
+</tr>
+<tr>
+<td>RF Radio Talasni Lifting</td>
+<td>100KM</td>
+</tr>
+<tr>
+<td>Dijamantna mikrodermoabrazija</td>
+<td>40KM</td>
+</tr>
+<tr>
+<td>Nadogradnja noktiju (gel)</td>
+<td>35KM</td>
+</tr>
+<tr>
+<td>Ojačavanje noktiju (ruke, noge)</td>
+<td>25KM</td>
+</tr>
+<tr>
+<td>Francuski manikir</td>
+<td>10KM</td>
+</tr>
+<tr>
+<td>Spa manikir</td>
+<td>25KM</td>
+</tr>
+<tr>
+ <th align="left" rowspan="2">* nova usluga u našim salonima</th>
+ </tr> <tr></tr> <tr></tr> <tr></tr>
+</table>
+</div>	
 </div>
-
-		
-			</div>
-
 </div>
-
-  
-
 <div id="dno">
 </div>
 <div id="copyright">
 <center>Selma Tucak, 16043</center>
 </div>
-<script src="mapa.js"></script>
 <script src="Skripta.js"></script>
 </body>
 </html>
 
 
 	
-
-
-
 
 

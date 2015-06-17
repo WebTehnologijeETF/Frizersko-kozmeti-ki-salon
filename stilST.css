@@ -8,14 +8,20 @@ background:url(beuty.jpg) no-repeat;
 background-size:cover;
 background-color:rgba(255, 255, 255, 0.0);
 background-position:center;
-height:100px;
+height:120px;
 width:250px;
 position:relative;
 margin-left:auto;
 margin-right:auto;
+border:5px solid rgba(0, 0, 0, 0.1);
 }
 
 
+#vrh{
+height:30px;
+background-color:black;
+border-bottom:5px solid red;
+}
 #okvir{
 width:750px;
 margin:auto;
@@ -32,7 +38,7 @@ height:100%;
 
 h1{
 font-size: 30pt;
-font-family:Lobster;
+font-family:Oswald;
 margin:0;
 padding:0;
 }
@@ -40,13 +46,26 @@ padding:0;
 .meni{
 color: black;
 height: 20px;	
+padding:10px;
 border-bottom: 2px solid #000;
 border-top: 2px solid #000;
 background-color:#fff;
 background: rgba(255, 255, 255, 0.4);
-padding:10px;
-margin-top:20px;
-margin-bottom:20px;
+margin-top:0px;
+}
+
+.gornji{
+margin-top:5px;
+height:10px;
+border-top:1px solid white;
+background: rgba(0, 0, 0, 0.05);
+}
+.dojnji{
+margin-top:0px;
+height:10px;
+border-bottom:1px solid white;
+background: rgba(0, 0, 0, 0.05);
+margin-bottom:10px;
 }
 
 .naviLinks a:link, a:hover, a:active, a:focus {
@@ -110,28 +129,95 @@ margin:0;
 padding:0;
 }
 
-#glavni{
-background-color:rgba(255, 255, 255, 0.4);
-width:750px;
+ul.paran {
+background-color:rgba(255, 255, 255, 0.8);
 }
 
+#glavni{
+
+background-color:rgba(255, 255, 255, 0.4);
+width:730px;
+margin-left:auto;
+margin-right:auto;
+}
+#komentarisanje{
+background-color:rgba(255, 255, 255, 0.4);
+width:730px;
+margin-left:auto;
+margin-right:auto;
+border-bottom:2px solid black;
+}
+#kursevi{
+width:730px;
+height:500px;
+margin-right:auto;
+margin-left:auto;
+margin-bottom:10px;
+}
 
 
 #linkovi{
+margin-left:50px;
 float:left;
-background-color:white;
-background: rgba(255, 255, 255, 0.4);
-width:750px;
+font-family:Oswald;
+width:730px;
 padding:0;
 }
-
-#cjenovnik{
+#admin {
 float:left;
-background-color:white;
-background: rgba(255, 255, 255, 0.4);
+margin-left:15px;
+font-family:Oswald;
+width:730px;
+height:px;
+
+padding:0;
+height:500px;
+}
+
+#omot{
+background-color:rgba(255, 255, 255, 0.1);
 width:750px;
+border:1px solid #C0C0C0;
+margin-bottom:30px;
+
+}
+#omotac{
+background-color:rgba(255, 255, 255, 0.1);
+width:700px;
+height:210px;
+margin-top:10px;
+padding-top:10px;
+padding-left:10px;
+margin-left:auto;
+margin-right:auto;
+border:3px solid #C0C0C0;
+}
+#cjenovnik{
+border:1px solid white;
+vertical-align:center;
+margin-left:auto;
+margin-right:auto;
+margin-bottom:10px;
+background-color:white;
+background: rgba(255, 255, 255, 0.3);
+width:730px;
 clear:both;
 }
+#dno{
+background-color:gray;
+border-top:5px solid red;
+height:80px;
+
+}
+#copyright{
+margin-bottom:0px;
+height:40px;
+background-color:gray;
+font-family:Oswald;
+color:rgba(255,0,0, 0.4);
+border-top:2px dashed rgba(0,0,0,0.8);
+}
+
 
 #podstranice .desno{
 float:right;
@@ -141,18 +227,38 @@ height:400px;
 width:400px;
 }
 
-#kontakt{
+#adresa{
 float:left;
-background-color: white;
-width: 750px;
-height:550px;
+width:470px;
+}
+#tekstic{
+margin-left:15px;
+font-family:Oswald;
+float:left;
+line-height:35px;
+}
+#map{
+width: 250px;
+ height: 260px; 
+ float:right;
+ margin-right:25px;
+}
+
+#kontakt{
+margin-top:10px;
+margin-bottom:10px;
+font-family:Oswald;
+width: 730px;
+margin-left:auto;
+margin-right:auto;
 background: rgba(255, 255, 255, 0.4);
+height:500px;
 }
 
 #kontaktForma {
-float:left;
-  margin-top:-5px;
-  width:350px;
+font-family:Oswald;
+float:right;
+  width:250px;
   height:500px;
 }
 #kontaktForma .labele {
@@ -169,11 +275,20 @@ font-family:Oswald;
   overflow:hidden;
   padding-bottom:9px
 }
+#delete {
+float:left;
+margin-left:15px;
+}
+#natrag{
+float:right;
+font-family:Oswald;
+margin-right:20px;
+}
 #komentarforma {
 width:100%;
+height:200px;
 float:left;
-  margin-top:-5px;
-  height:500px;
+margin-left:15px;
 }
 #komentarforma .labele {
 font-family:Oswald;
@@ -189,27 +304,21 @@ font-family:Oswald;
   overflow:hidden;
   padding-bottom:9px
 }
+
 .dugme {
-margin-left:100px;
-padding: 8px 5px 8px;
+
+margin-left:0px;
+padding: 4px 5px 4px;
 font-size: 18px;
 font:Oswald;
 background-color: #F36C8C;
 font-weight: bold;
 text-shadow: 1px 1px #F36C8C;
 color: #ffffff;
-border-radius: 100px;
--moz-border-radius: 100px;
--webkit-border-radius: 100px;
-border: 1px solid #F36C8C;
-cursor: pointer;
-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
--moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
--webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 }
 
 button {
-margin-left:110px;
+margin-left:70px;
 padding: 8px 15px 8px;
 font-size: 18px;
 font:Oswald;
@@ -253,41 +362,40 @@ box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 font-family:Oswald;
 float:left;
 background: rgba(255,255,255,0.4);
-width:550px;
-margin-bottom:5px;
-
+width:530px;
+margin-bottom:20px;
 }
 
 #kursdrugi{
 font-family:Oswald;
 float:left;
 background: rgba(255,255,255,0.4);
-width:550px;
-
+width:530px;
 }
 #slikajedan{
-top:0;
+margin-top:6px;
 background:url(vizazista.jpg) no-repeat;
 float:right;
 width:200px;
-height:120px;
+height:130px;
 }
 #slikadva{
-top:0;
+margin-top:6px;
 background:url(nokti.jpg) no-repeat;
 float:right;
 width:200px;
-height:120px;
+height:130px;
 }
 
 
 
 #slika {
    background:url(slike.jpg) no-repeat;
-   width:750px;
+   width:730px;
 background-position:center;
-  height:500px;
- margin:0;
+  height:430px;
+ margin-left:auto;
+ margin-right:auto;
  padding:0;
 clear:both;
  position:relative;
@@ -306,9 +414,11 @@ float:right;
  margin-top:-15px;
  font-family:Oswald;
  font-size:15px;
- color:red;
  padding:0;
  clear:both;
+ }
+ .linkzavise:hover{
+ text-decoration:underline;
  }
  .prijava {
  font-family: Oswald;
@@ -321,42 +431,44 @@ float:right;
      
  }
  
- .loginforma {
- margin-right:15px;
-   top: 15px;
-    right:15px;
-	position:absolute;
-       width:150px;
-       z-index: 2;
-      
+
+#name {
+margin-top:-200px;
+padding-top:-200px;
+margin-right:15px;
 }
-.labelelogin {
-background:rgba(255,0,0,0.3);
-font-family:Oswald;
-font-size:15px;
-font-weight: bold;
- float:left;
- margin-left:0px;
- width:150px;
- line-height:20px
+
+.loginforma{
+float:right;
+margin-top:5px;
+margin-right:150px;
+
 }
+
 .submiti {
-margin-top:15px;
-padding: 8px 5px 8px;
+margin-top:-20px;
+float:right;
+margin-right:-70px;
+
 font-size: 13px;
 font:Oswald;
 background-color: #F36C8C;
 font-weight: bold;
 text-shadow: 1px 1px #F36C8C;
 color: #ffffff;
-border-radius: 100px;
--moz-border-radius: 100px;
--webkit-border-radius: 100px;
-border: 1px solid #F36C8C;
-cursor: pointer;
-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
--moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
--webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+
+}
+.logout{
+
+float:right;
+margin-right:-50px;
+
+font-size: 13px;
+font:Oswald;
+background-color: #F36C8C;
+font-weight: bold;
+text-shadow: 1px 1px #F36C8C;
+color: #ffffff;
 }
 #name {
 width:150px;;

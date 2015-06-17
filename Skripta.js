@@ -25,6 +25,8 @@ function sakrijnovi(){
 }
 
 
+
+
 //funkcija za provjeru Blank Space
 function provjeriSpace(id) {
 var flag=0;
@@ -64,32 +66,6 @@ ret=false;
 document.getElementById("eror").style.display="none";
 }
 
-
-//validacija opstine
-if(opstina.value=="") {
-document.getElementById("eroropstina").style.display="inline";
-document.getElementById("eroropstina").style.visibility="visible";
-ret=false;
-}
-else
-{
-document.getElementById("eroropstina").style.display="none";
-}
-
-
-//validacija mjesta
-if(mjesto.value=="") {
-document.getElementById("erormjesto").style.display="inline";
-document.getElementById("erormjesto").style.visibility="visible";
-ret=false;
-}
-else
-{
-document.getElementById("erormjesto").style.display="none";
-}
-
-ajaxValidacija();
-
 //validacija poruke
 if(poruka.value=="") {
 document.getElementById("erorporuka").style.display="inline";
@@ -120,8 +96,17 @@ if (!re.test(email) || email.value=="") {
     else if (re.test(email)) {
     document.getElementById("erormail").style.display="none";
     }
-    
+	
+	if (ret) {
+    var link = "mailto:selma.tucak@gmail"
+             + "?cc=vljubovic@etf.unsa.ba"
+             + "&subject=" + escape(document.getElementById('predmet').value)
+             + "&body=" + escape(document.getElementById('poruka').value)
+    ;
 
+    window.location.href = link;
+	alert("Hvala što ste nas kontaktirali!");
+	}
 return ret;
 }
 
@@ -140,47 +125,6 @@ function ucitaj(id) {
 	xhr.send();
 }
 
-
-//ajax validacija
-var usjpesno=false;
-function ajaxValidacija() {
-    var o = document.getElementById("opstina");
-var m = document.getElementById("mjesto");
-
-var ajax = new XMLHttpRequest();
-
-    
-	ajax.onreadystatechange = function() {// Anonimna funkcija
-		if (ajax.readyState == 4 && ajax.status == 200) {
-		var obj = JSON.parse(ajax.responseText);
-			if(Object.keys(obj)[0] == "ok"){
-				document.getElementById("eroropstina").style.display="none";
-	document.getElementById("erormjesto").style.display="none";
-                uspjesno=true;
-                
-			}		
-
-		else if (Object.keys(obj)[0] == "greska") {
-		document.getElementById("eroropstina").style.display="inline";
-document.getElementById("eroropstina").style.visibility="visible";
-			document.getElementById("erormjesto").style.display="inline";
-document.getElementById("erormjesto").style.visibility="visible";
-uspjesno=false;
-			}
-			else{
-				document.getElementById("eroropstina").style.display="inline";
-document.getElementById("eroropstina").style.visibility="visible";
-			document.getElementById("erormjesto").style.display="inline";
-document.getElementById("erormjesto").style.visibility="visible";
-uspjesno=false;
-			}
-		
-			}
-	}
-	ajax.open("GET", "http://zamger.etf.unsa.ba/wt/mjesto_opcina.php?opcina="+o.value+"&mjesto="+m.value, true);
-	ajax.send();
-
-}
 
 
 
